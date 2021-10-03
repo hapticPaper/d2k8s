@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  flask-server:
+    hostname: flask-server
+    build: .
+    container_name: flask-server
+    restart: 'always'
+    expose: 
+      - '5000'
+    ports:
+      - '5055:5000'
+    environment:
+      FLASK_PORT: 5000
+      FLASK_HOST: '0.0.0.0'
